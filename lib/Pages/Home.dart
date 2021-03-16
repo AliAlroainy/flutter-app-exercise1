@@ -1,3 +1,4 @@
+import 'package:app/Pages/Login.dart';
 import 'package:flutter/material.dart';
 import 'Page2.dart';
 
@@ -22,22 +23,28 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Row(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(
-                child: Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-              child: RaisedButton(
-                padding: const EdgeInsets.all(0.0),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Page2();
-                  }));
-                },
-                child: Text('page2'),
-              ),
-            )),
-            Expanded(child: Text('Hello Ali AL-Roainy'))
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Page2();
+                }));
+              },
+              child: Text('page2'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Login();
+                }));
+              },
+              child: Text('Login'),
+            ),
+            Text('Hello Ali AL-Roainy'),
+            Image.asset('assets/images/bb.jpg')
           ],
         ),
       ),
